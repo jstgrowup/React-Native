@@ -10,6 +10,13 @@ export default function App() {
       <Text>hajsdgf</Text>
       <Text>hajsdgf</Text>
       <Text>hajsdgf</Text>
+      <Text>hajsdgf</Text>
+      <Text>hajsdgf</Text>
+      <Text>hajsdgf</Text>
+      <Text>hajsdgf</Text>
+      <Text>hajsdgf</Text>
+      <Text>hajsdgf</Text>
+
 
       <StatusBar style="auto" />
     </View>
