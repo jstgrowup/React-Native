@@ -1,5 +1,8 @@
 
 import { Text, StyleSheet, View } from "react-native"
+import FlexBox from "./src/COmponents/FlexBox"
+import NetflixCard from "./src/COmponents/NetflixCard"
+import Counter from "./src/Hooks/Counter"
 import CustomCompo from "./src/screens/CustomCompo"
 import EcomFlatList from "./src/screens/EcomFlatList"
 import First from "./src/screens/First"
@@ -15,7 +18,10 @@ const App = () => {
     <FlatListDemo />
     <EcomFlatList /> */}
     {/* <ImageFlatList /> */}
-    <RNButton />
+    {/* <RNButton /> */}
+    {/* <NetflixCard /> */}
+    {/* <FlexBox /> */}
+    <Counter />
   </View>
 
 }
