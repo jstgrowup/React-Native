@@ -3,6 +3,7 @@ import { Text, StyleSheet, View } from "react-native"
 import FlexBox from "./src/COmponents/FlexBox"
 import NetflixCard from "./src/COmponents/NetflixCard"
 import Counter from "./src/Hooks/Counter"
+import LoginForm from "./src/Hooks/LoginForm"
 import UseEffect from "./src/Hooks/UseEffect"
 import CustomCompo from "./src/screens/CustomCompo"
 import EcomFlatList from "./src/screens/EcomFlatList"
@@ -23,7 +24,8 @@ const App = () => {
     {/* <NetflixCard /> */}
     {/* <FlexBox /> */}
     {/* <Counter /> */}
-    <UseEffect />
+    {/* <UseEffect /> */}
+    <LoginForm />
   </View>
 
 }
