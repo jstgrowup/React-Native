@@ -1,26 +1,39 @@
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import React, { useState } from 'react'
 import Checkbox from 'expo-checkbox'
-const LoginForm = () => {
+const LoginForm = ({ navigation }) => {
     const [agree, setagree] = useState(false)
+    const [username, setusername] = useState("")
+    const [Password, setPassword] = useState("")
+    const submit = () => {
+        if (username === "subham" && Password === "dey") {
+
+            Alert.alert("thankyou")
+            navigation.navigate('Use');
+        } else {
+            return Alert.alert("wrong credentials")
+
+        }
+    }
+    // console.log(username, Password);
     return (
         <View style={styles.mainContainer}>
             <Text style={styles.mainHeader}>Login Form</Text>
             <Text style={styles.description}>Hello please fillup the form </Text>
             <View style={styles.inputContainer}>
                 <Text style={styles.labels}>Enter Your Name</Text>
-                <TextInput style={styles.inputStyle} autoCapitalize={"none"} autoCorrect={false} />
+                <TextInput onChangeText={(text) => setusername(text)} style={styles.inputStyle} placeholder={"Enter your username"} value={username} autoCapitalize={"none"} autoCorrect={false} />
             </View>
             <View style={styles.inputContainer}>
                 <Text style={styles.labels}>Enter Your Password</Text>
-                <TextInput style={styles.inputStyle} autoCapitalize={"none"} autoCorrect={false} secureTextEntry={true} />
+                <TextInput onChangeText={(text) => setPassword(text)} placeholder='Enter your passoword' value={Password} style={styles.inputStyle} autoCapitalize={"none"} autoCorrect={false} secureTextEntry={true} />
                 <View style={styles.wrapper}>
-                    <Checkbox value={agree} onValueChange={() => setagree(!agree)} />
+                    <Checkbox value={agree} onValueChange={() => setagree(!agree)} color={agree ? "#4630EB" : undefined} />
                     <Text style={styles.wrapperText}> ALL the Tand C are agreed</Text>
 
                 </View>
-                <TouchableOpacity style={styles.buttonStyle}>
-                    <Text>Login</Text>
+                <TouchableOpacity style={styles.buttonStyle} onPress={() => submit()}>
+                    <Text style={styles.submitStyle}>Login</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -31,7 +44,7 @@ export default LoginForm
 
 const styles = StyleSheet.create({
     mainContainer: {
-        height: '100%',
+        height: '80%',
         paddingHorizontal: 30,
         paddingTop: 30,
         backgroundColor: '#fff'
@@ -40,59 +53,48 @@ const styles = StyleSheet.create({
         fontSize: 25,
         color: '#344055',
         fontWeight: '500',
-        paddingTop: 20,
-        paddingBottom: 15,
-        textTransform: 'capitalize',
+        paddingVertical: 10,
     },
     description: {
         fontSize: 20,
         color: '#7d7d7d',
-        paddingBottom: 20,
-        lineHeight: 25,
-        fontFamily: 'regular',
+        padding: 10,
+
+
     },
     inputContainer: {
-        marginTop: 20,
+
+        paddingVertical: 10
     },
     labels: {
         fontSize: 18,
         color: '#7d7d7d',
-        marginTop: 10,
-        marginBottom: 5,
-        lineHeight: 25,
-        fontFamily: 'regular',
     },
     inputStyle: {
-        borderWidth: 1,
+        borderWidth: 2,
         borderColor: 'rgba(0,0,0,0.3)',
-        paddingHorizontal: 15,
         paddingVertical: 7,
-        borderRadius: 1,
-        fontFamily: 'regular',
-        fontSize: 18
+        borderRadius: 10,
+        fontSize: 18,
+        padding: 14
     },
     wrapper: {
-        // paddingHorizontal: 10,
-        // paddingVertical: 15,
-        // paddingBottom: 30
         flexDirection: "row",
-        // justifyContent:'center',
         alignItems: "center",
-        marginTop: 15,
-        marginBottom: 360
-        // alignContent:"center"
-
+        paddingVertical: 30
     },
     wrapperText: {
-        // paddingLeft: 30
-        marginTop: 0,
+        padding: 3
     },
     buttonStyle: {
         borderRadius: 40,
+        backgroundColor: "black",
         height: 50,
         justifyContent: 'center',
         alignItems: 'center'
-
+    },
+    submitStyle: {
+        color: "white"
     },
     buttonText: {
         color: '#fff',
