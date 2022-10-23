@@ -1,5 +1,5 @@
 
-import { Text, StyleSheet, View } from "react-native"
+import { Image, Text, StyleSheet, View, style } from "react-native"
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import FlexBox from "./src/COmponents/FlexBox"
@@ -14,19 +14,23 @@ import First from "./src/screens/First"
 import FlatListDemo from "./src/screens/FlatListDemo"
 import ImageFlatList from "./src/screens/Images"
 import RNButton from "./src/screens/RNButton"
+import Home from "./src/Project/Home";
+
 const App = () => {
+
   const stack = createNativeStackNavigator()
-  return <NavigationContainer>
-    <stack.Navigator initialRouteName="LoginForm">
-      <stack.Screen name="Login" component={LoginForm} />
-      <stack.Screen name="Use" component={UseEffect} />
-    </stack.Navigator>
-  </NavigationContainer>
-
-
-
-
-
+  return  <Home />
+   
+      
+     
+   
+  
+  // <NavigationContainer>
+  //   <stack.Navigator initialRouteName="LoginForm">
+  //     <stack.Screen name="Login" component={LoginForm} />
+  //     <stack.Screen name="Use" component={UseEffect} />
+  //   </stack.Navigator>
+  // </NavigationContainer>
   {/* <CustomCompo />
     <First />
     <Text style={styles.textStyle}>hello world</Text>
@@ -41,10 +45,5 @@ const App = () => {
   {/* <LoginForm /> */ }
 
 }
-const styles = StyleSheet.create({
-  textStyle: {
-    color: "red",
-    marginTop: 100
-  },
-})
+const styles = StyleSheet.create({})
 export default App
